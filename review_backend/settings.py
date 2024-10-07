@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # Installed
     "accounts.apps.AccountsConfig",
+    "reviews.apps.ReviewsConfig",
     # Third Party
     "rest_framework",
     'rest_framework.authtoken',
@@ -134,7 +135,9 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.SessionAuthentication',
         'rest_framework.authentication.TokenAuthentication',
     ],
-    'DEFAULT_PERMISSION_CLASSES' : []
+    'DEFAULT_PERMISSION_CLASSES' : [
+        "rest_framework.permissions.AllowAny",
+    ]
 }
 
 AUTH_USER_MODEL = "accounts.CustomUser"
